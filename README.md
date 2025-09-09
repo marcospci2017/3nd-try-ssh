@@ -37,6 +37,6 @@ _Link Direto_ com <https://mail.google.com/mail/u/0/#inbox>
   4. 4th-item
 
 # _Imagens:_ Inicia-se com _ponto de exclamação_+_[Título da imagem]_+_(URL da imagem)
-  * 1st-img: [Star Trek Discovery](C:\Users\Marcos\Pictures\Star_Trek_Icones_Legais\ehiic28tl6eutqfdn9eggkm51b-8ccab4a677fcf8ecadbbf5aa42c1a927.png)
-  * 2nd-img: [Star Trek Origins](‪C:\Users\Marcos\Pictures\Star_Trek_Icones_Legais\2023e4s392p836fbgemdqvut2f-c8e75759c97f7aa984ada4e45bd4cff0.png)
-  * 3rd-img- [STD_O Farol Klingon](‪C:\Users\Marcos\Pictures\Star_Trek_Icones_Legais\star-trek-discovery-series-and-season-folder-icons-star-trek-discovery-s01-png-icon.jpg)
+  * 1st-img: ![Star Trek Discovery](C:\Users\Marcos\Pictures\Star_Trek_Icones_Legais\ehiic28tl6eutqfdn9eggkm51b-8ccab4a677fcf8ecadbbf5aa42c1a927.png)
+  * 2nd-img: ![Star Trek Origins](‪)
+  * 3rd-img- ![STD_O Farol Klingon]()
