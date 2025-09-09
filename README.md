@@ -37,6 +37,18 @@ _Link Direto_ com <https://mail.google.com/mail/u/0/#inbox>
   4. 4th-item
 
 # _Imagens:_ Inicia-se com _ponto de exclamação_+_[Título da imagem]_+_(URL da imagem)
-  * 1st-img: ![Star Trek Discovery](C:\Users\Marcos\Pictures\Star_Trek_Icones_Legais\ehiic28tl6eutqfdn9eggkm51b-8ccab4a677fcf8ecadbbf5aa42c1a927.png)
+  * 1st-img: ![Star Trek Discovery]()
   * 2nd-img: ![Star Trek Origins](‪)
   * 3rd-img- ![STD_O Farol Klingon]()
+
+
+
+# _Citação:_ Usar o sinal _maior-que_ no início de cada linha(_sem espaços_)
+>Primeira linha
+>Segunda linha
+>Terceira linha
+>**NA: mesmo que não edição existam várias linhas, na formataçõa final o texto ficará em um único bloco.
+
+
+# _Next:_
+
