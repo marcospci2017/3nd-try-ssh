@@ -37,9 +37,11 @@ _Link Direto_ com <https://mail.google.com/mail/u/0/#inbox>
   4. 4th-item
 
 # _Imagens:_ Inicia-se com _ponto de exclamação_+_[Título da imagem]_+_(URL da imagem)
-  * 1st-img: ![Star Trek Discovery](C:\Users\Marcos\Desktop\GIT\3nd-dir-sem-git-init\3nd-try-ssh\ST_Discovery.png)
-  * 2nd-img: ![Star Trek Origins](‪)
-  * 3rd-img- ![STD_O Farol Klingon]()
+  * 1st-img: ![Alt](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/Fillipa%20Georgeou.jpg)
+  * 2nd-img: ![Alt](‪)
+  * 3rd-img- ![Alt]()
+  * 4th-img- ![Alt]()
+  * 5th-img- ![Alt]()
 
 
 
