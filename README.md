@@ -37,11 +37,11 @@ _Link Direto_ com <https://mail.google.com/mail/u/0/#inbox>
   4. 4th-item
 
 # _Imagens:_ Inicia-se com _ponto de exclamação_+_[Título da imagem]_+_(URL da imagem)
-  * 1st-img: ![Alt](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/Fillipa%20Georgeou.jpg)
-  * 2nd-img: ![Alt](‪)
-  * 3rd-img- ![Alt]()
-  * 4th-img- ![Alt]()
-  * 5th-img- ![Alt]()
+  * 1st-img: ![Fillipa](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/Fillipa%20Georgeou.jpg)
+  * 2nd-img: ![Alt](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/Samuel%20Lorca.jpg‪)
+  * 3rd-img- ![Alt](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/Saru.jpg)
+  * 4th-img- ![Alt](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/William%20Pike.jpg)
+  * 5th-img- ![Alt](https://github.com/marcospci2017/3nd-try-ssh/blob/main/jpg/michael_Burnam.jpg)
 
 
 
