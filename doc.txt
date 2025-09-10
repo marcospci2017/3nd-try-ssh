@@ -1,0 +1,3 @@
+testando comando de salvamento e fechamento.
+
+- Salvar e Fechar com o comando 'CTRL + X' + 'Y' + ENTER
