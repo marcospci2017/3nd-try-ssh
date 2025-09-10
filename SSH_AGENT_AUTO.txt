@@ -1,0 +1,107 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX SHH_AGENT_AUTOMATIC XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+			No Windows (usando Git Bash)
+
+	Abra o arquivo de configuração: Use nano ~/.profile ou nano ~/.bashrc no Git Bash, dependendo de qual está sendo lido pelo seu ambiente.
+ 
+Adicione o script equivalente: ao do Linux, ajustando o caminho para sua chave privada.
+
+	    # Verifica se o ssh-agent está em execução e o inicia se não estiver
+
+    	if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+        ssh-agent > ~/.ssh/ssh-agent-info
+    	fi
+    	if [ -f ~/.ssh/ssh-agent-info ]; then
+        . ~/.ssh/ssh-agent-info > /dev/null
+    	fi
+
+    	# Adiciona chaves ao agente (se não estiverem já carregadas)
+    	ssh-add -l | grep "No identities" > /dev/null
+    	if [ $? -eq 0 ]; then
+        ssh-add ~/path/to/your/private_key # Substitua pelo caminho da sua chave privada
+    	fi
+
+	**KEY: id_3nd-da-porra
+	       id_3nd-da-porra.pub
+
+Salve e feche: o arquivo.
+ 
+Recarregue o perfil do shell: com o comando source correspondente.
+
+		Para Bash: source ~/.bashrc
+ 
+Alternativa mais simples com o AddKeysToAgent
+
+Uma alternativa mais fácil, especialmente no Windows, é adicionar esta linha ao seu arquivo ~/.ssh/config:
+ 
+Código:
+
+	<<!nav>>AddKeysToAgent<<!/nav>> yes
+
+Este comando instruirá o ssh-agent a adicionar sua chave privada automaticamente quando for usada pela primeira vez. 
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+			Auto-launching ssh-agent on Git for Windows
+
+	***Abrir .bashrc no GIT: nano ~/.bashrc
+	***Endereço da chave atual: ssh-add ~/.ssh/id_3nd-da-porra
+
+
+		You can run ssh-agent automatically when you open bash or Git shell. Copy the following lines and paste them into your ~/.profile or ~/.bashrc file in Git shell:
+
+		env=~/.ssh/agent.env
+
+		agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+
+		agent_start () {
+    		(umask 077; ssh-agent >| "$env")
+    		. "$env" >| /dev/null ; }
+
+		agent_load_env
+
+		# agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+		agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+
+		if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+    		agent_start
+    		ssh-add_[endereço da ssh-key sem extensão]***
+		elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+    		ssh-add_[endereço da ssh-key sem extensão]***
+		fi
+
+		unset env
+
+	If your private key is not stored in one of the default locations (like ~/.ssh/id_rsa), you'll need to tell your SSH authentication agent where to find it. To add your key to ssh-agent, type ssh-add ~/path/to/my_key. For more information, see Generating a new SSH key and adding it to the ssh-agent.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+***NA: 	- Usando o código acima no '.bashrc' (abrir .bashrc com o comando 'nano_~/.bashrc'); 
+	- Sem esquecer, adicionar o 'Path' da 'ssh-key' (ssh-add_[path ssh-key]**sem extensão); 
+	- Salvar e Fechar com o comando 'CTRL + X' + 'Y'(save) + ENTER(Exit);
+	- Fechar o Git Bash e reabri-lo;
+	- MSG na 1º linha: Identity added: c/user/Marcos/.ssh/id_[nameKey](email da conta github);
+	- Criar novo 'doc.txt';
+	- Add e Commit;
+	- Inserir apenas 'git_push';
+	- MSG: ...To github.com: email-conta/nome-repo.git
+		edb2720..d550056 main --> main
+	- Confirmado 'push' direto.
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+	Tip
+
+	If you want ssh-agent to forget your key after some time, you can configure it to do so by running ssh-add -t <seconds>.
+
+	Now, when you first run Git Bash, you are prompted for your passphrase:
+
+		> Initializing new SSH agent...
+		> succeeded
+		> Enter passphrase for /c/Users/YOU/.ssh/id_rsa:
+		> Identity added: /c/Users/YOU/.ssh/id_rsa (/c/Users/YOU/.ssh/id_rsa)
+		> Welcome to Git (version 1.6.0.2-preview20080923)
+		>
+		> Run 'git help git' to display the help index.
+		> Run 'git help <command>' to display help for specific commands.
+		The ssh-agent process will continue to run until you log out, shut down your computer, or kill 		the process.
